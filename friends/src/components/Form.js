@@ -1,6 +1,5 @@
 import React from 'react';
 import { auth } from './auth';
-
 class Form extends React.Component {
     state = {
         id: 0,
@@ -8,13 +7,11 @@ class Form extends React.Component {
         age: '',
         email: ''
     };
-
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
     };
-
     createFriend = (e) => {
         e.preventDefault();
         const newFriend = {
@@ -25,7 +22,6 @@ class Form extends React.Component {
         };
         this.addFriend(newFriend);
     };
-
     addFriend = (newFriend) => {
         auth()
             .post('/api/friends', newFriend)
@@ -35,7 +31,6 @@ class Form extends React.Component {
             })
             .catch((err) => console.log(err.response));
     };
-
     render() {
         return (
             <div className="Form">
@@ -61,5 +56,4 @@ class Form extends React.Component {
         );
     }
 }
-
 export default Form;

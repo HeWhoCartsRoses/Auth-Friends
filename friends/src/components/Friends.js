@@ -1,16 +1,13 @@
 import React from 'react';
 import { auth } from './auth';
 import Form from './Form';
-
 class Friends extends React.Component {
     state = {
         friends: []
     };
-
     componentDidMount() {
         this.getData();
     }
-
     getData = () => {
         auth()
             .get('/api/friends')
@@ -22,7 +19,6 @@ class Friends extends React.Component {
             })
             .catch((err) => console.log(err.response));
     };
-
     render() {
         return (
             <div>
@@ -36,11 +32,9 @@ class Friends extends React.Component {
                             <h3>Email: {friend.email}</h3>
                         </div>
                     ))}
-                    <p>notice its emptiness ;w;</p>
                 </div>
             </div>
         );
     }
 }
-
 export default Friends;

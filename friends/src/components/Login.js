@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { auth } from './auth';
-
 class Login extends React.Component {
     state = {
         credentials: {
@@ -36,7 +35,7 @@ class Login extends React.Component {
                         name="username"
                         value={this.state.credentials.username}
                         onChange={this.handleChange}
-                    /><br></br>
+                    /><br />
                     <label>Password:</label>
                     <input
                         type="password"
@@ -44,12 +43,11 @@ class Login extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                     />
-                    <br></br>
+                    <br />
                     <button>Log in</button>
                 </form>
             </div>
         );
     }
 }
-
 export default Login;

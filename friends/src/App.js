@@ -18,7 +18,6 @@ function App() {
             <span className="link">Friends List</span>
           </Link>
         </div>
-
         <Switch>
           <PrivateRoute exact path="/protected" component={Friends} />
           <Route path="/login" component={Login} />
